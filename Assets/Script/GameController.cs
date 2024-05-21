@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameController : MonoBehaviour
@@ -23,14 +24,18 @@ public class GameController : MonoBehaviour
                 {
                     currentScene = currentScene.nextScene;
                     bottomBar.PlayScene(currentScene);
-
+                    
 
                 }
                 else
                 {
                     bottomBar.PlayNextSentence();
                 }
-                
+                if (currentScene.nextScene == null)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
+
             }
         }
     }
