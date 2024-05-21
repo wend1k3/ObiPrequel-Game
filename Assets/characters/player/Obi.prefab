@@ -235,9 +235,10 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   airWalkSpeed: 3
-  jumpImpulse: 8
+  jumpImpulse: 5
   _isMoving: 0
   _isRunning: 0
+  _isBlocking: 0
   _isFacingRight: 1
 --- !u!114 &546964857638863101
 MonoBehaviour:
@@ -384,22 +385,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6cd4b989-f663-45bc-9449-2f142cfb580f
     m_ActionName: Player/Jump[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1647528543992208908}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnAddHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 07b8a0bd-cd92-4494-8cf6-e2408169fd1a
-    m_ActionName: Player/AddHealth[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

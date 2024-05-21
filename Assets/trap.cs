@@ -25,6 +25,7 @@ public class trap : MonoBehaviour
         ani.SetBool(AnimationStrings.isHit, true);
         
         bool gotHit = damagable.Hit(attackDamage, knockback);
+   
         
     }
 
