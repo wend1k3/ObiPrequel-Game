@@ -22,21 +22,23 @@ public class GameController : MonoBehaviour
             {
                 if (bottomBar.IsLastSentence())
                 {
-                    currentScene = currentScene.nextScene;
-                    bottomBar.PlayScene(currentScene);
-                    
+                    if (currentScene.nextScene == null) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    else
+                    {
+                        currentScene = currentScene.nextScene;
+                        bottomBar.PlayScene(currentScene);
+                    }
+
 
                 }
                 else
                 {
                     bottomBar.PlayNextSentence();
                 }
-                if (currentScene.nextScene == null)
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                }
-
             }
+
+
         }
+            
     }
 }
