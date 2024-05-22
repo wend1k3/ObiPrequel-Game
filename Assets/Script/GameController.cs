@@ -35,7 +35,10 @@ public class GameController : MonoBehaviour
                 {
                     bottomBar.PlayNextSentence();
                 }
-            }
+                if (currentScene.nextScene == null)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                }
 
 
         }
