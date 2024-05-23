@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   sentences:
-  - text: Or maybe..... he never died?
+  - text: Or maybe..... he wasn't dead?
     speaker: {fileID: 11400000, guid: 35180c2704dce2a4cb0f05d159b2f64d, type: 2}
+    type: 0
   background: {fileID: 0}
   nextScene: {fileID: 11400000, guid: f2c8626d167d27149acecd38ecbabd9a, type: 2}

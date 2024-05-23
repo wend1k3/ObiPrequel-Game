@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   sentences:
-  - text: "Don\u2019t come to save me, my padawan"
+  - text: "Don\u2019t come to rescue  me, my padawan"
     speaker: {fileID: 11400000, guid: e4912f7112012334eb3dfa3fac98f538, type: 2}
+    type: 0
   background: {fileID: 0}
   nextScene: {fileID: 11400000, guid: 85f93a78981270346a85c6868fc89f03, type: 2}
