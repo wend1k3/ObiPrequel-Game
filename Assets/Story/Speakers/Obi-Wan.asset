@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395ee9b1e6d596e41bc6a605bebcad80, type: 3}
   m_Name: Obi-Wan
   m_EditorClassIdentifier: 
-  speakerName: Obi-Wan
+  speakerName: obi-Wan
   textColor: {r: 1, g: 0.33150962, b: 0, a: 1}
