@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
         bottomBar.PlayScene(currentScene);
     }
 
