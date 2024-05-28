@@ -7,8 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirs),typeof(Damagable))]
 public class StormTrooper : MonoBehaviour
 {
-    public float walkSpeed = 2f;
-    public float walkSpeedLerpStopRate = 0.2f;
+    public float walkSpeed;
+    public float walkSpeedLerpStopRate;
+
     public DetectionZone attackZone;
     private GameObject obi;
     public GameObject bullet;
