@@ -5,12 +5,13 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirs),typeof(Damagable))]
-public class StormTrooper : MonoBehaviour
+public abstract class StormTrooper : MonoBehaviour
 {
     public float walkSpeed;
-    public float walkSpeedLerpStopRate;
+    public float walkSpeedLerpStopRate = 0.2f;
 
     public DetectionZone attackZone;
+    public DetectionZone cliffZone;
     private GameObject obi;
     public GameObject bullet;
     public Transform bulletPos;
@@ -128,7 +129,7 @@ public class StormTrooper : MonoBehaviour
         //RaycastHit2D[] wallHits = new RaycastHit2D[3];
         // Flip the knights walk direction when it runs into a wall or the edge of a cliff
 
-        if (touchingDirs.IsGrounded && touchingDirs.IsOnWall)
+        if (touchingDirs.IsGrounded && touchingDirs.IsOnWall || cliffZone.DetectedColliders.Count==0)
         {
           
             FlipDir();
@@ -180,13 +181,7 @@ public class StormTrooper : MonoBehaviour
         damageable = GetComponent<Damagable>();
     }
 
-    void shoot()
-    {
-
-        Instantiate(bullet, bulletPos.position, Quaternion.identity);
-
-
-    }
+    public abstract void shoot();
 
     public bool LockVelocity
     {
