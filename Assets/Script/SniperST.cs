@@ -90,8 +90,7 @@ public class SniperST : StormTrooper
 
 
             }
-            Debug.LogError("stay time: "+stayTimer);
-            Debug.LogError("aim time: " + aimTimer);
+           
         }
         else
         {

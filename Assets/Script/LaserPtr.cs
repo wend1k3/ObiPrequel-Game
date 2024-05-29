@@ -17,7 +17,7 @@ public class LaserPtr: MonoBehaviour
     {
         _lineRenderer.enabled = true;
       
-        Vector3 endPos = transform.position + (obi.transform.position * _laserLength);
+        Vector3 endPos = obi.transform.position;
         _lineRenderer.SetPositions(new Vector3[] {transform.position,endPos });
 
     }

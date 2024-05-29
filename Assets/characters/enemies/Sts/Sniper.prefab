@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1814000994863898534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: -0.55, z: -10.009973}
+  m_LocalPosition: {x: 0.37, y: -0.532, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -259,11 +259,11 @@ MonoBehaviour:
   bullet: {fileID: 1303800398354143845, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
   bulletPos: {fileID: 114462023214002492}
   _hasTarget: 0
-  stayTime: 5
-  aimTime: 2
+  stayTime: 6
+  aimTime: 1
   aimTimer: 0
   stayTimer: 0
-  _laserPtr: {fileID: 0}
+  _laserPtr: {fileID: 7177167676557681665}
 --- !u!1 &2124886082889847090
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,8 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784175ae8c5728b4ea535c2d4d98e6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectedColliders:
-  - {fileID: 0}
+  DetectedColliders: []
 --- !u!61 &2099295978875767398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -457,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 114462023214002492}
   - component: {fileID: 5823843708826203264}
+  - component: {fileID: 7177167676557681665}
   m_Layer: 8
   m_Name: LaserBeam
   m_TagString: Untagged
@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 6952072833490504950}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.618, y: -3.805, z: 0}
+  m_LocalPosition: {x: 0.534, y: -0.164, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,7 +500,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -522,8 +522,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: -1}
+  - {x: 0, y: 0, z: -1}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -532,7 +532,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.0359478
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -545,16 +545,16 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 1, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
+      ctime1: 5590
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -562,13 +562,13 @@ LineRenderer:
       ctime7: 0
       atime0: 0
       atime1: 65535
-      atime2: 0
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
@@ -583,3 +583,16 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7177167676557681665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6952072833490504950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15591930b4d7294388fa735cf87525c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _laserLength: 3
