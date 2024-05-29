@@ -15,16 +15,16 @@ public abstract class StormTrooper : MonoBehaviour
     private GameObject obi;
     public GameObject bullet;
     public Transform bulletPos;
-    private float timer;
+    protected float timer;
 
-    Rigidbody2D rb;
-    TouchingDirs touchingDirs;
-    Animator animator;
+    protected Rigidbody2D rb;
+    protected TouchingDirs touchingDirs;
+    protected Animator animator;
     Damagable damageable;
     public enum WalkableDir { Right, Left };
 
     private WalkableDir _walkDir;
-    Vector2 walkDirectionAsVector2;
+    protected Vector2 walkDirectionAsVector2;
 
     // walk direction vector
     private Vector2 walkDirVec = Vector2.right;
@@ -58,7 +58,7 @@ public abstract class StormTrooper : MonoBehaviour
     public bool HasTarget
     {
         get { return _hasTarget; }
-        private set
+        protected set
         {
             animator.SetBool(AnimationStrings.hasTarget, value);
         }
@@ -70,28 +70,7 @@ public abstract class StormTrooper : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        HasTarget = attackZone.DetectedColliders.Count > 0;
-        
-        
-        if (canShoot)
-        {
-            timer += Time.deltaTime;
-            if (timer > 0.5) //0.5
-            {
-                timer = 0;
-                shoot();
-
-
-
-            }
-
-        }
-        
-
-
-    }
+    public abstract void Update();
 
     public bool CanMove
     {
@@ -119,38 +98,10 @@ public abstract class StormTrooper : MonoBehaviour
 
 
 
-    private void FixedUpdate()
-    {
+    public abstract void FixedUpdate();
+ 
 
-
-        touchingDirs.wallCheckDirection = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-
-
-        //RaycastHit2D[] wallHits = new RaycastHit2D[3];
-        // Flip the knights walk direction when it runs into a wall or the edge of a cliff
-
-        if (touchingDirs.IsGrounded && touchingDirs.IsOnWall || cliffZone.DetectedColliders.Count==0)
-        {
-          
-            FlipDir();
-        }
-      
-        if (CanMove)
-        {
-            rb.velocity = new Vector2(walkSpeed * walkDirectionAsVector2.x, rb.velocity.y);
-        }
-        else
-        {
-            // Default slow towards 0 on x velocity
-            rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkSpeedLerpStopRate), rb.velocity.y);
-        }
-  
-        
-
-
-    }
-
-    private void FlipDir()
+    protected void FlipDir()
     {
         //Debug.LogWarning("wall: " + touchingDirs.colCast() + "  " + animator.GetBool(AnimationStrings.isOnWall));
         if (WalkDir == WalkableDir.Right)

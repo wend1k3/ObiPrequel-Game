@@ -1,18 +1,28 @@
 ﻿using UnityEngine;
-using Unity;
+
 public class LaserPtr: MonoBehaviour
 {
     public float _laserLength;
     private LineRenderer _lineRenderer;
+    private GameObject obi;
 
-    void Start()
+    public void Start()
     {
+        obi = GameObject.FindGameObjectWithTag("Player");
         _lineRenderer = GetComponent<LineRenderer>();
+        //_lineRenderer.enabled = false ;  
     }
 
-    void Update()
+    public void render()
     {
-        Vector3 endPos = transform.position + (transform.right * _laserLength);
+        //_lineRenderer.enabled = true;
+      
+        Vector3 endPos = transform.position + (obi.transform.position * _laserLength);
         _lineRenderer.SetPositions(new Vector3[] {transform.position,endPos });
+    }
+
+    public void setEnable()
+    {
+        _lineRenderer.enabled = false;
     }
 }

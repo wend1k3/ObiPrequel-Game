@@ -234,6 +234,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123883108}
   m_CullTransparentMesh: 1
+--- !u!1001 &198403743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 367286811276755113, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303800398354143845, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
+      propertyPath: m_Name
+      value: bullet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd661e9c2a489034b87db946ad6028ec, type: 3}
 --- !u!1 &205968976
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime1
-      value: 65535
+      value: 5590
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime2
@@ -425,11 +482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.r
@@ -457,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5823843708826203264, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
@@ -5293,3 +5350,4 @@ SceneRoots:
   - {fileID: 5165412209308636627}
   - {fileID: 2682968682813753661}
   - {fileID: 288809730}
+  - {fileID: 198403743}
