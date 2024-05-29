@@ -25,4 +25,6 @@ public class DetectionZone : MonoBehaviour
     {
         DetectedColliders.Remove(collision);
     }
+
+    
 }

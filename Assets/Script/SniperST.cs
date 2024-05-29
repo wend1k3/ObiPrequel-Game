@@ -4,10 +4,10 @@ public class SniperST : StormTrooper
 {
 
     [SerializeField]
-    public float stayTime = 10f;
+    public float stayTime = 6f;
 
     [SerializeField]
-    public float aimTime = 2f;
+    public float aimTime = 0.5f;
 
     [SerializeField]
     private float aimTimer;
@@ -79,12 +79,25 @@ public class SniperST : StormTrooper
             else 
             {
                 animator.SetBool(AnimationStrings.isAim, true);
-                aim();
-                aimTimer += Time.deltaTime;
+                if (attackZone.DetectedColliders.Count > 0)
+                {
+                    aim();
+                    aimTimer += Time.deltaTime;
+
+                }
+                else _laserPtr.setEnable();
                 stayTimer += Time.deltaTime;
+
 
             }
             Debug.LogError("stay time: "+stayTimer);
+            Debug.LogError("aim time: " + aimTimer);
+        }
+        else
+        {
+            stayTimer = 0;
+            aimTimer = 0;
+            animator.SetBool(AnimationStrings.isAim, false);
         }
 
     }
