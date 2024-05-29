@@ -56,7 +56,11 @@ public class SniperST : StormTrooper
     private void aim()
     {
         _laserPtr.render();
-        if (aimTimer >= aimTime) shoot();
+        if (aimTimer >= aimTime)
+        {
+            shoot();
+            aimTimer = 0;
+        }
     }
 
     public override void Update()
@@ -66,7 +70,7 @@ public class SniperST : StormTrooper
         {
             if (stayTimer>=stayTime)
             {
-                //_laserPtr.setEnable();
+                _laserPtr.setEnable();
                 animator.SetBool(AnimationStrings.isAim, false);
                 FlipDir();
                 stayTimer = 0;

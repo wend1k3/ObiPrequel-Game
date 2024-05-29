@@ -10,12 +10,12 @@ public class LaserPtr: MonoBehaviour
     {
         obi = GameObject.FindGameObjectWithTag("Player");
         _lineRenderer = GetComponent<LineRenderer>();
-        //_lineRenderer.enabled = false ;  
+        _lineRenderer.enabled = false ;  
     }
 
     public void render()
     {
-        //_lineRenderer.enabled = true;
+        _lineRenderer.enabled = true;
       
         Vector3 endPos = transform.position + (obi.transform.position * _laserLength);
         _lineRenderer.SetPositions(new Vector3[] {transform.position,endPos });
