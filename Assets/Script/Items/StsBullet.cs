@@ -6,6 +6,7 @@ public class StsBullet : Item
 {
     
     protected float force = 5;
+    protected int selfDamage = 2;
     private float timer;
     protected int attackDamage;
     public Vector2 knockback = Vector2.zero;
@@ -69,7 +70,7 @@ public class StsBullet : Item
             {
                 Damagable damagable = other.GetComponent<Damagable>();
 
-                damagable.Health -= 2;
+                damagable.Health -= attackDamage;
                 Destroy(gameObject);
             }
             
