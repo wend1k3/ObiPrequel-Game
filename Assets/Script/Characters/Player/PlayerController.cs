@@ -199,10 +199,15 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            IsBlocking = true;
+            IsBlocking = ForceBar.instance.UseForce(10);
+            //IsBlocking = true;
             animator.SetTrigger(AnimationStrings.blockk);
         }
-        else if (context.canceled) IsBlocking = false; 
+        else if (context.canceled)
+        {
+            IsBlocking = false;
+            ForceBar.instance.ReForce();
+        }
             
           
        
