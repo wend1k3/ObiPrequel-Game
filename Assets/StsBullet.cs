@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StsBullet : MonoBehaviour
+public class StsBullet : Item
 {
-    private GameObject obi;
-    private Rigidbody2D rb;
-    public float force;
+    
+    protected float force = 5;
     private float timer;
-    public int attackDamage = 2;
+    protected int attackDamage;
     public Vector2 knockback = Vector2.zero;
     private bool flag = false;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         obi = GameObject.FindGameObjectWithTag("Player");
@@ -27,7 +26,7 @@ public class StsBullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         timer += Time.deltaTime;
         if (timer > 10)
@@ -37,7 +36,7 @@ public class StsBullet : MonoBehaviour
         }
     }
   
-    void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.gameObject.CompareTag("Player"))
