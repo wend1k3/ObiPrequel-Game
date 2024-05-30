@@ -2350,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4981166070997365609, guid: 3c4ff4ca6865aa44c9ecda23c7607c29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.11
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 4981166070997365609, guid: 3c4ff4ca6865aa44c9ecda23c7607c29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3251,7 +3251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1549795378}
   - component: {fileID: 1549795379}
-  - component: {fileID: 1549795380}
   m_Layer: 5
   m_Name: ForceBar
   m_TagString: Untagged
@@ -3331,19 +3330,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1549795380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549795377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a869ba9f09f83459c51fe1a01f5a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceBar: {fileID: 1549795379}
 --- !u!1 &1568776843
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,7 +3956,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1647528543992208908, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
   m_PrefabInstance: {fileID: 2682968682813753661}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1978334567}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9f47bddddef79d468438a855dd60ef2, type: 3}
@@ -4450,6 +4436,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1978334567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1062305167029430639, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
+  m_PrefabInstance: {fileID: 2682968682813753661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1978334576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978334567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a869ba9f09f83459c51fe1a01f5a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceBar: {fileID: 1549795379}
+  obi: {fileID: 1596254972}
+  forceRegen: 9.9
+  forceDrain: 10
 --- !u!1 &1993278386
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obi
       objectReference: {fileID: 0}
+    - target: {fileID: 1647528543992208908, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
+      propertyPath: forceBar
+      value: 
+      objectReference: {fileID: 1978334576}
     - target: {fileID: 2126974267009330661, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
       propertyPath: healthSliders.Array.size
       value: 10
@@ -5380,7 +5391,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1062305167029430639, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1978334576}
   m_SourcePrefab: {fileID: 100100000, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
 --- !u!1001 &5165412209308636627
 PrefabInstance:

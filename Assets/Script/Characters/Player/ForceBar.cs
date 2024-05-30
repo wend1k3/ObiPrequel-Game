@@ -1,34 +1,88 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+
 public class ForceBar: MonoBehaviour
 {
     public Slider forceBar;
-    private int maxForce = 100;
-    private int currentForce;
+    private static float maxForce = 100f;
+    private float currentForce;
 
-    private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
-    private Coroutine regen;
+    
+    public PlayerController obi;
+    [Header("Force Regen Parameters")]
+    [Range(0,50)][SerializeField] private float forceRegen = 10;
+    [Range(0,50)][SerializeField] private float forceDrain= 10;
+
+
 
     /*
     For Singleton purpose
-     */ 
-     
+    private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
+    private Coroutine regen;
     public static ForceBar instance;
-  
-
     private void Awake()
     {
         instance = this;
     }
+
+     */
+
+
+
+
+
+
     void Start()
     {
         currentForce = maxForce;
         forceBar.maxValue = maxForce;
         forceBar.value = currentForce;
+        obi = GetComponent<PlayerController>();
       
     }
+    private void Update()
+    {
+        if (!obi.IsRButton)
+        {
+            if (currentForce<=maxForce-0.01)
+            {
+                currentForce +=  forceRegen * Time.deltaTime;
+                UpdateForceBar();
 
+                
+                
+            }
+            
+        }
+        if (obi.IsBlocking) Blocking();
+    }
+
+    private bool check()
+    {
+        return currentForce > 0;
+    }
+    public void Blocking()
+    {
+        if (check())
+        {
+            obi.IsBlocking = true;
+            currentForce -= forceDrain * Time.deltaTime;
+            UpdateForceBar();
+
+            if (currentForce<=0) obi.IsBlocking = false;
+            
+
+        }
+    }
+
+   
+
+    private void UpdateForceBar()
+    {
+        forceBar.value = currentForce;
+    }
+
+    /*
     public bool UseForce(int amount)
     {
         if (currentForce - amount >= 0)
@@ -61,4 +115,6 @@ public class ForceBar: MonoBehaviour
         }
         regen = null;
     }
+    */
+    
 }

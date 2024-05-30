@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 8f;
     public float airWalkSpeed = 3f;
     public float jumpImpulse = 5;
+
     Vector2 moveInput;
     TouchingDirs touchingDirs;
     HealthSystem healthSystem;
+
+    [HideInInspector]
+    public ForceBar forceBar;
 
 
     public float CurrentMoveSpeed { get
@@ -56,6 +60,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool _isBlocking = false;
 
+    [SerializeField]
+    private bool _isRButton = false;
+
+
+    [SerializeField]
+    private float rbTimer = 0;
+
     public bool IsMoving { 
         get { return _isMoving; }
         private set { 
@@ -78,11 +89,19 @@ public class PlayerController : MonoBehaviour
     public bool IsBlocking
     {
         get { return _isBlocking; }
-        private set
+        set
         {
             _isBlocking = value;
             animator.SetBool(AnimationStrings.block, value);
+            
         }
+    }
+
+
+    public bool IsRButton
+    {
+        get { return _isRButton; }
+        
     }
 
     public bool _isFacingRight = true;
@@ -115,7 +134,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirs = GetComponent<TouchingDirs>();
-        healthSystem = GetComponent<HealthSystem>();    
+        healthSystem = GetComponent<HealthSystem>();
+        forceBar = GetComponent<ForceBar>();
+      
       
     }
 
@@ -199,14 +220,21 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            IsBlocking = ForceBar.instance.UseForce(10);
             //IsBlocking = true;
+            //IsBlocking = true;
+            _isRButton = true;
             animator.SetTrigger(AnimationStrings.blockk);
+            forceBar.Blocking();
+            //
+
+           
         }
         else if (context.canceled)
         {
+            _isRButton = false;
             IsBlocking = false;
-            ForceBar.instance.ReForce();
+            //ForceBar.instance.ReForce();
+            //
         }
             
           
