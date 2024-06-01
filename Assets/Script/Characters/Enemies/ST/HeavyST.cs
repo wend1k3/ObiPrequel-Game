@@ -22,7 +22,7 @@ public class HeavyST: StormTrooper
 
 
 
-        if (touchingDirs.IsGrounded && touchingDirs.IsOnWall || cliffZone.DetectedColliders.Count == 0)
+        if (touchingDirs.IsGrounded && touchingDirs.IsOnWall)
         {
 
             FlipDir();
@@ -56,5 +56,10 @@ public class HeavyST: StormTrooper
             }
 
         }
+    }
+
+    public void OnCliffDetected()
+    {
+        if (touchingDirs.IsGrounded) FlipDir();
     }
 }

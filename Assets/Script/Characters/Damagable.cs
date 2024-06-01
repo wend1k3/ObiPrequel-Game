@@ -104,4 +104,13 @@ public class Damagable : MonoBehaviour
 
     }
 
+    public void Heal(int amount)
+    {
+        if (IsAlive)
+        {
+            Health = Health + amount > MaxHealth ? MaxHealth : Health + amount;
+            healthSystem.updateHealth(Health);
+        }
+    }
+
 }

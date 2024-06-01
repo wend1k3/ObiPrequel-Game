@@ -337,11 +337,11 @@ PrefabInstance:
       objectReference: {fileID: 3312967077775682777, guid: 2081722fac6555046866052773b2099a, type: 3}
     - target: {fileID: 805813231309618956, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.37
+      value: -0.336
       objectReference: {fileID: 0}
     - target: {fileID: 805813231309618956, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.532
+      value: -0.523
       objectReference: {fileID: 0}
     - target: {fileID: 805813231309618956, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5416,6 +5416,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.003207326
       objectReference: {fileID: 0}
+    - target: {fileID: 4017466997044505318, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4436549559986630717, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.6760054
@@ -5459,6 +5463,22 @@ PrefabInstance:
     - target: {fileID: 4671994604172424790, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700920852393385337, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700920852393385337, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352921455268488038, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.178
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352921455268488038, guid: 5e06a165f361d844d957e59111fb3c9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
