@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public ForceBar forceBar;
 
+    [SerializeField]
+    private Vector3 respwanPoint;
+
+    public GameObject falldetector;
+
 
     public float CurrentMoveSpeed { get
         {
@@ -136,6 +141,7 @@ public class PlayerController : MonoBehaviour
         touchingDirs = GetComponent<TouchingDirs>();
         healthSystem = GetComponent<HealthSystem>();
         forceBar = GetComponent<ForceBar>();
+        respwanPoint = transform.position;
       
       
     }
@@ -166,6 +172,7 @@ public class PlayerController : MonoBehaviour
         }
         
         animator.SetFloat(AnimationStrings.dy, rb.velocity.y);
+        falldetector.transform.position = new Vector2(transform.position.x,falldetector.transform.position.y);
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -272,5 +279,13 @@ public class PlayerController : MonoBehaviour
         healthSystem.addHealthBar();
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FallDetect")
+        {
+            transform.position = respwanPoint;
+        }
+    }
+
+
 }

@@ -38,10 +38,12 @@ public class ForceBar: MonoBehaviour
         forceBar.maxValue = maxForce;
         forceBar.value = currentForce;
         obi = GetComponent<PlayerController>();
+        //forceBar.transform.position = obi.transform.position;
       
     }
     private void Update()
     {
+        //forceBar.transform.position = obi.transform.position;
         if (!obi.IsRButton)
         {
             if (currentForce<=maxForce-0.01)
