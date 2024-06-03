@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1814000994863898534, guid: 066813b5d80c10747ac909b7a8ab6f09, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2867,7 +2867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6278821280016962499, guid: 3c4ff4ca6865aa44c9ecda23c7607c29, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6330256193475575549, guid: 3c4ff4ca6865aa44c9ecda23c7607c29, type: 3}
       propertyPath: bullet
@@ -5900,6 +5900,10 @@ PrefabInstance:
       propertyPath: forceBar
       value: 
       objectReference: {fileID: 1978334576}
+    - target: {fileID: 1647528543992208908, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
+      propertyPath: airWalkSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1647528543992208908, guid: f2d99d5673c8d724d87cbc4f74c3284b, type: 3}
       propertyPath: falldetector
       value: 
